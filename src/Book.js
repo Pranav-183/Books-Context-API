@@ -1,18 +1,22 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BooksContext } from "./Context/BooksContextProvider";
 import Transitioner from './Transitioner'
 
-const Book = () => {
+const Book = ({ setScroll }) => {
    const { id } = useParams()
    const books = useContext(BooksContext)[0]
    const book = books.find(book => book.id.toString() === id)
+
+   useEffect(() => {
+      setScroll(false)
+   }, [])
 
    return (
       <Transitioner single={true}>
          <div className="h-full w-full flex justify-center items-center bg-zinc-800">
             <div className="w-4/5 h-4/5 bg-slate-700 mt-24 flex items-center">
-               <img src={book.img} alt="book img" className="h-4/5 ml-40 mr-20" />
+               <img src={process.env.PUBLIC_URL + book.img} alt="book img" className="h-4/5 ml-40 mr-20" />
                <div className="info h-4/5 w-auto text-slate-100 text-2xl">
                   <div className="w-full flex my-5">
                      <div className="cursive">Title:&nbsp;&nbsp;</div>

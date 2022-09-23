@@ -6,7 +6,7 @@ const animationConfig = {
    exit: { opacity: 0 }
 }
 
-const Transitioner = ({ children, single }) => {
+const Transitioner = ({ children }) => {
    return (
       <motion.div
          variants={animationConfig}
@@ -14,7 +14,7 @@ const Transitioner = ({ children, single }) => {
          animate="animate"
          exit="exit"
          transition={{ duration: .5 }}
-         className={single ? 'w-full h-full' : ''}
+         className="transitioner"
       >
          {children}
       </motion.div>

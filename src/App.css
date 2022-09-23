@@ -1,0 +1,311 @@
+:root {
+   --zinc-100: rgb(244, 244, 245);
+   --zinc-500: rgb(113, 133, 122);
+   --zinc-550: rgb(100, 100, 96);
+   --zinc-600: rgb(82, 82, 91);
+   --zinc-700: rgb(63, 63, 70);
+   --zinc-800: rgb(39, 39, 42);
+   --slate-700: rgb(51, 65, 85);
+   --slate-100: rgb(241, 245, 249);
+   --cyan-600: rgb(8, 145, 178);
+   --cyan-700: rgb(14, 116, 144);
+   --black: rgb(0, 0, 0);
+   --xl2: 1.5rem;
+   --navHeight: 10vh;
+   --columns: 3;
+   --edit-columns: 2;
+}
+
+::-webkit-scrollbar {
+   width: 15px;
+}
+
+::-webkit-scrollbar-track {
+   background-color: var(--zinc-800);
+}
+
+::-webkit-scrollbar-track:hover {
+   background-color: var(--zinc-700);
+}
+
+::-webkit-scrollbar-thumb {
+   background-color: var(--zinc-600);
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background-color: var(--zinc-550);
+}
+
+.all {
+   background-color: var(--zinc-800);
+   height: 100vh;
+   width: 100vw;
+}
+
+/* .transitioner {
+
+} */
+
+.navbar {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: var(--navHeight);
+   padding-left: 15vw;
+   color: var(--zinc-100);
+   background-color: var(--zinc-700);
+}
+
+.navbar > a > img {
+   height: 8vh;
+}
+
+.navbar > .routes {
+   font-size: var(--xl2);
+   padding: 0 2vw;
+}
+
+.books {
+   display: grid;
+   grid-template-columns: repeat(var(--columns), 1fr);
+   height: calc(100vh - var(--navHeight));
+   width: 100vw;
+   gap: 10vmin;
+   color: var(--zinc-100);
+   padding: 5vmin;
+   place-items: center;
+   overflow-y: auto;
+   transition: all .2s ease;
+}
+
+.bookItem {
+   height: 70vh;
+   width: 375px;
+   background-color: var(--zinc-600);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 20px;
+   cursor: pointer;
+   transition: all 200ms ease;
+}
+
+.bookImg {
+   width: 75%;
+}
+
+.bookItem:hover {
+   scale: 1.05;
+}
+
+.oneContainer {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   padding-top: 10vh;
+}
+
+.edits {
+   display: grid;
+   grid-template-columns: repeat(var(--edit-columns), 1fr);
+   height: 100vh;
+   gap: 20px;
+   padding: 5rem 7rem;
+   color: var(--zinc-100);
+   overflow-y: scroll;
+   place-items: center;
+}
+
+.editItem {
+   background-color: var(--zinc-600);
+   height: 25vh;
+   width: 40vw;
+   display: flex;
+   font-size: 1.2rem;
+   padding: 0.5rem 0.75rem;
+   text-align: center;
+   cursor: pointer;
+   transition: all 200ms;
+}
+
+.oneEdit:hover {
+   scale: 1.05;
+}
+
+.editContainer {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 0.75rem;
+}
+
+.editButton {
+   padding: 0 0.5rem;
+   background-color: var(--zinc-500);
+   margin-left: 0.5rem;
+   width: 33.33%;
+}
+
+/* Media Queries */
+
+@media (min-width: 250px) and (max-width: 330px) {
+   .books {
+      padding: 2vmin;
+      gap: 5vmin;
+      --columns: 1;
+   }
+   .bookItem {
+      width: 225px;
+      height: 60vh;
+      gap: 10px;
+      text-align: center;
+   }
+}
+
+@media (min-width: 331px) and (max-width: 435px) {
+   .books {
+      padding: 2vmin;
+      gap: 5vmin;
+      --columns: 1;
+   }
+   .bookItem {
+      width: 300px;
+      height: 60vh;
+      gap: 10px;
+      text-align: center;
+   }
+}
+
+@media (min-width: 436px) and (max-width: 571px) {
+   .books {
+      padding: 2vmin;
+      gap: 5vmin;
+      --columns: 1;
+   }
+   .bookItem {
+      width: 400px;
+      height: 80vh;
+      gap: 10px;
+      text-align: center;
+   }
+}
+
+@media (min-width: 571px) and (max-width: 620px) {
+   .books {
+      padding: 2vmin;
+      gap: 5vmin;
+      --columns: 2;
+   }
+   .bookItem {
+      width: 250px;
+      height: 55vh;
+      gap: 10px;
+      text-align: center;
+   }
+}
+
+@media (min-width: 621px) and (max-width: 780px) {
+   .books {
+      padding: 2vmin;
+      gap: 5vmin;
+      --columns: 2;
+   }
+   .bookItem {
+      width: 275px;
+      height: 60vh;
+      gap: 10px;
+      text-align: center;
+   }
+}
+
+@media (min-width: 781px) and (max-width: 931px) {
+   .books {
+      padding: 2vmin;
+      gap: 5vmin;
+      --columns: 2;
+   }
+   .bookItem {
+      width: 350px;
+      height: 70vh;
+      gap: 10px;
+      text-align: center;
+   }
+}
+
+@media (min-width: 931px) and (max-width: 1100px) {
+   .books {
+      padding: 2vmin;
+      gap: 5vmin;
+   }
+   .bookItem {
+      width: 275px;
+      height: 60vh;
+      gap: 10px;
+      text-align: center;
+   }
+}
+
+@media (min-width: 1101px) and (max-width: 1325px) {
+   .books {
+      padding: 3vmin;
+      gap: 5vmin;
+   }
+   .bookItem {
+      height: 60vh;
+      width: 300px;
+      gap: 10px;
+   }
+}
+
+@media (max-width: 451px) {
+   .edits {
+      padding: 2rem;
+      --edit-columns: 1;
+   }
+
+   .editItem {
+      width: 80vw;
+      height: 25vh;
+   }
+}
+
+@media (min-width: 451px) and (max-width: 551px) {
+   .edits {
+      padding: 2rem;
+      --edit-columns: 1;
+   }
+
+   .editItem {
+      width: 80vw;
+      height: 35vh;
+   }
+}
+
+@media (min-width: 551px) and (max-width: 800px) {
+   .edits {
+      padding: 2rem;
+      --edit-columns: 1;
+   }
+
+   .editItem {
+      width: 75vw;
+      height: 30vh;
+   }
+}
+
+@media (min-width: 801px) and (max-width: 900px) {
+   .edits {
+      padding: 2rem;
+   }
+}
+
+@media (min-width: 901px) and (max-width: 1050px) {
+   .edits {
+      padding: 5rem;
+   }
+}
